@@ -3,6 +3,7 @@
 Scott Hwang
 
 LinkedIn: https://www.linkedin.com/in/snhwang
+Email: snhwang@alum.mit.edu
 
 11/22/2020
 
