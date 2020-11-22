@@ -22,3 +22,5 @@ The README at the original repo also has some instructions on finding the creden
 
 This project was implemented with Unity 2019.4.3f1. For Watson, unity-sdk-4.8.0 ( https://github.com/watson-developer-cloud/unity-sdk/releases ) and unity-sdk-core-1.2.1 ( https://github.com/IBM/unity-sdk-core/releases )were used. Oculus lipsync uses ovr_lipsync_unity_20.0.0 ( https://developer.oculus.com/downloads/package/oculus-lipsync-unity/ ).
 
+The way I did this is probably wrong or at least not optimal. I tried to send the output from Watson text-to-speech to Oculus Lipsync. However, it would either not do anything, or the lips would move but there would be no sound, or there was sound but no lipsyncing. The only way I could get it to work was to have 2 separate AudioSources: one for the Oculus lipsyncing and one for audio.  If somebody can figure out a better way to do this, I would be grateful.
+
