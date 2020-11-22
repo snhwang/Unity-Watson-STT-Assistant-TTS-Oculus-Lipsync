@@ -18,3 +18,7 @@ https://www.youtube.com/watch?v=Yrtgig6qdhU
 
 The README at the original repo also has some instructions on finding the credentials.
 
+## Implementation
+
+This project was implemented with Unity 2019.4.3f1. For Watson, unity-sdk-4.8.0 ( https://github.com/watson-developer-cloud/unity-sdk/releases ) and unity-sdk-core-1.2.1 ( https://github.com/IBM/unity-sdk-core/releases )were used. Oculus lipsync uses ovr_lipsync_unity_20.0.0 ( https://developer.oculus.com/downloads/package/oculus-lipsync-unity/ ).
+
