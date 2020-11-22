@@ -1,0 +1,34 @@
+language: node_js
+node_js:
+- "10"
+os:
+- osx
+osx_image: xcode61
+rvm:
+- 2.2
+cache:
+  directories:
+    - ./Unity
+before_install:
+- chmod a+x ./Travis/installUnity.sh
+- chmod a+x ./Travis/createProject.sh
+- chmod a+x ./Travis/installSDK.sh
+# - chmod a+x ./Travis/runTests.sh
+- npm install -g npm@6.x
+install:
+- pip install bumpversion
+- npm install @semantic-release/exec
+- npm install @semantic-release/commit-analyzer
+- npm install @semantic-release/release-notes-generator
+- npm install @semantic-release/changelog
+- npm install @semantic-release/git
+- npm install @semantic-release/github
+- ./Travis/installUnity.sh
+script:
+- ./Travis/createProject.sh
+- ./Travis/installSDK.sh
+# - ./Travis/runTests.sh
+deploy:
+  - provider: script
+    skip_cleanup: true
+    script: npx semantic-release

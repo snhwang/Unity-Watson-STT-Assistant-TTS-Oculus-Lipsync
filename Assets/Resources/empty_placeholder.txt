@@ -1,0 +1,10 @@
+﻿
+This file here only because github removed any folder that does not contain any files.
+
+New WatsonSettings.asset files are created here.
+
+There should be a menu named SNH-Watson where you can create a WatsonSettings.asset file.
+There is also a menu selection that will jump to the Resources folder where WatsonSettings
+should be created.
+
+
