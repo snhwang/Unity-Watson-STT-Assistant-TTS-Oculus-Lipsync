@@ -6,6 +6,9 @@ LinkedIn: https://www.linkedin.com/in/snhwang
 
 Email: snhwang@alum.mit.edu
 
+12/6/2020
+Fixed the speech-to-text scene.
+
 11/22/2020
 
 This project is based on the project at https://github.com/snhwang/Unity-Watson-STT-Assistant-TTS . There is only minimal difference in the Text-To-Speech code compared to that original repo. However, I've create this separate repo since it may develop in a different direction using other Oculus components. For now, only Oculus Lipsync is included ( https://developer.oculus.com/downloads/package/oculus-lipsync-unity/ ). The idea is similar to that of the orgininal repo which was intended to be used with SALSA lipsync to animate a 3D character's mouth during speaking. Oculus Lipsync is used for this project and is included here since it is free to download. Watson is still used for converting speech to text, generating a chat response with Assistant, and converting the chat response into audio speech. 
