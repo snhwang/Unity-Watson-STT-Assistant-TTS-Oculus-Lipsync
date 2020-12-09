@@ -141,6 +141,7 @@ public class SimpleBot : MonoBehaviour
     // Get the "welcome" chat reponse from IBM Watson Assistant
     public IEnumerator Welcome()
     {
+        Debug.Log("Welcome");
         // Set chat processing status to "Processing"
         chatStatus = ProcessingStatus.Processing;
 
@@ -219,7 +220,21 @@ public class SimpleBot : MonoBehaviour
     // This is where the returned chat response is set to send as output
     protected virtual void OnMessage(DetailedResponse<MessageResponse> response, IBMError error)
     {
-        textResponse = response.Result.Output.Generic[0].Text.ToString();
+        Debug.Log("response = " + response.Result.ToString());
+
+        if (response == null ||
+            response.Result == null ||
+            response.Result.Output == null ||
+            response.Result.Output.Generic == null ||
+            response.Result.Output.Generic.Count < 1)
+        {
+            textResponse = "I don't know how to respond to that.";
+        }
+        else
+        {
+            textResponse = response.Result.Output.Generic[0].Text.ToString();
+        }
+
 
         if (targetInputField != null)
         {
