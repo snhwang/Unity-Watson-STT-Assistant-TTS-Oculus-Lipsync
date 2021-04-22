@@ -8,7 +8,13 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/TextToSpeech.unity
     guid: 8330c19a6ff93504e8c969e6abc1bd06
+  - enabled: 0
+    path: Assets/Scenes/TextToSpeech-Oculus.unity
+    guid: 48db76fb1448e3648aedb03e8815b83a
+  - enabled: 1
+    path: Assets/Scenes/TextToSpeech-Oculus-REST.unity
+    guid: 7e405fb9e1baea1428dc485fcf5c5b8f
   m_configObjects: {}

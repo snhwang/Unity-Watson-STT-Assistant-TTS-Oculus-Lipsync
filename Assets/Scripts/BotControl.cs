@@ -24,10 +24,12 @@ public class BotControl : MonoBehaviour
             if (chat.GetStatus() == SimpleBot.ProcessingStatus.Processing || !tts.IsFinished())
             {
                 stt.Active = false;
+                stt.StopRecording();
             }
             else
             {
                 stt.Active = true;
+                stt.StartRecording();
             }
         }
 

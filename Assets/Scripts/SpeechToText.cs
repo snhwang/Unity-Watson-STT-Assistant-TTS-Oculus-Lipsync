@@ -102,6 +102,8 @@ public class SpeechToText : MonoBehaviour
 
         }
 
+        Active = false;
+
         //var temp = GameObject.Find("WatsonSettings").GetComponent<WatsonSettings>();
     }
 
@@ -125,8 +127,8 @@ public class SpeechToText : MonoBehaviour
         }
         _service.StreamMultipart = true;
 
-        Active = true;
-        StartRecording();
+        Active = false;
+        //StartRecording();
 
     }
 

@@ -35,6 +35,7 @@ using IBM.Watson.TextToSpeech.V1;
 
 using UnityEngine;
 using UnityEngine.UI;
+using System.Security.Cryptography.X509Certificates;
 
 public class TextToSpeech : MonoBehaviour
 {

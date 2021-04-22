@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Assistant_apikey: 
   serviceUrl: 
-  versionDate: 2020-04-13
+  versionDate: 2020-09-24
   assistantId: 
   tts_apikey: 
   tts_serviceUrl: 
