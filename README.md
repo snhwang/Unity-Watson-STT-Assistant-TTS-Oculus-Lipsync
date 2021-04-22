@@ -10,7 +10,10 @@ Email: snhwang@alum.mit.edu
 
 Made it work with the provided robot head from Oculus. It's a different type of model than the female avatar. The mouth is just a texture, so you need to use the script OVRLipSyncContextTextureFlip.cs instead of OVRLipSyncContextMorphTarget.cs. There are new scenes labeled with "robot" so you know which ones have the robot head.
 
-There also a scene OculusLipsyncChatMulti which has 2 chatbots. The player is the main camera. You can move around using the arrow keys. The chatbot that is closest to the player is the one that will respond.
+There also a scene OculusLipsyncChatMulti which has 2 chatbots. The player is the main camera. You can move around using the arrow keys. The chatbot that is closest to the player is the one that will respond. Each of chatbots can different Watson Settings. In the Resoucres folder there is WatsonSettings and WatsonSettings1. Both need to have the credentials filled in to make the multi-chatbot scene work.
+
+I update to Unity 2019.4.24f1. The Watson Unity sdk is unity-sdk-5.0.2 and the Watson Unity core sdk is unity-sdk-core-1.2.2.
+
 
 12/6/2020
 
