@@ -6,6 +6,9 @@ LinkedIn: https://www.linkedin.com/in/snhwang
 
 Email: snhwang@alum.mit.edu
 
+2021/04/27
+Fixed error resulting from not checking that all the Watson services are ready.
+
 2021/04/22
 
 Made it work with the provided robot head from Oculus. It's a different type of model than the female avatar. The mouth is just a texture, so you need to use the script OVRLipSyncContextTextureFlip.cs instead of OVRLipSyncContextMorphTarget.cs. There are new scenes labeled with "robot" so you know which ones have the robot head.
