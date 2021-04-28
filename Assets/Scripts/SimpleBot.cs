@@ -226,6 +226,8 @@ public class SimpleBot : MonoBehaviour
             response.Result == null ||
             response.Result.Output == null ||
             response.Result.Output.Generic == null ||
+            response.Result.Output.Generic[0] == null ||
+            response.Result.Output.Generic[0].Text == null ||
             response.Result.Output.Generic.Count < 1)
         {
             textResponse = "I don't know how to respond to that.";
@@ -274,7 +276,8 @@ public class SimpleBot : MonoBehaviour
 
     public bool ServiceReady()
     {
-        return createSessionTested;
+        //return createSessionTested;
+        return Assistant_service != null;
     }
 
     public string GetResult()
