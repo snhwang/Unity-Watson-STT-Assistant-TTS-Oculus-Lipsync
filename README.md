@@ -6,10 +6,13 @@ LinkedIn: https://www.linkedin.com/in/snhwang
 
 Email: snhwang@alum.mit.edu
 
-2021/04/27
+05/16/2021
+Fixed Simplebot.cs so that the Text field targetText is set to the response text from the chat bot. So, in your Unity scene, you can add a Text GameObject to your canvas and set it to targetText in the Inspector so that the text response appears on your canvas. These a new Unity scene in the project "OculusLipsyncChat with output text" which shows an example of this. It is other identical to the other Unity scene "OculusLipsyncChat."
+
+04/27/2021
 Fixed error resulting from not checking that all the Watson services are ready.
 
-2021/04/22
+04/22/2021
 
 Made it work with the provided robot head from Oculus. It's a different type of model than the female avatar. The mouth is just a texture, so you need to use the script OVRLipSyncContextTextureFlip.cs instead of OVRLipSyncContextMorphTarget.cs. There are new scenes labeled with "robot" so you know which ones have the robot head.
 
