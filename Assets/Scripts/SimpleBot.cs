@@ -108,6 +108,14 @@ public class SimpleBot : MonoBehaviour
         inputField.onValueChanged.AddListener(delegate { Runnable.Run(ProcessChat(inputField.text)); });
     }
 
+    private void Update()
+    {
+        if (targetText != null && textResponse != null)
+        {
+            targetText.text = textResponse;
+        }
+    }
+
     public IEnumerator CreateService()
     {
 
@@ -226,8 +234,6 @@ public class SimpleBot : MonoBehaviour
             response.Result == null ||
             response.Result.Output == null ||
             response.Result.Output.Generic == null ||
-            response.Result.Output.Generic[0] == null ||
-            response.Result.Output.Generic[0].Text == null ||
             response.Result.Output.Generic.Count < 1)
         {
             textResponse = "I don't know how to respond to that.";
