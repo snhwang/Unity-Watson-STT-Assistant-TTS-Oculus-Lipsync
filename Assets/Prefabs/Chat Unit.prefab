@@ -119,7 +119,7 @@ PrefabInstance:
     - target: {fileID: 5017974539503883503, guid: 6a3e0cfd4f0083e4585deb8ab24cee2f,
         type: 3}
       propertyPath: voice
-      value: 9
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 5017974539503883503, guid: 6a3e0cfd4f0083e4585deb8ab24cee2f,
         type: 3}

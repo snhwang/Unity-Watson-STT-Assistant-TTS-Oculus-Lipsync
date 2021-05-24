@@ -126,41 +126,6 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 5f658e6e48970d340b4491a5fc959251, type: 3}
   - {fileID: 2800000, guid: 660be1fdb8590b14bab012a991bdeb86, type: 3}
   smoothAmount: 70
---- !u!114 &9219030578224032038
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4202982389133070085}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: edc145a494038d8459c22ba26a36b1f5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  settings: {fileID: 11400000, guid: 3f813d8bd389cab4db095af6fb7b02b5, type: 2}
-  voice: 8
-  outputAudioSource: {fileID: 0}
-  oculusLipsyncAudioSource: {fileID: 9219030578224032034}
-  externalInputField: {fileID: 0}
-  externalTriggerType: 0
---- !u!114 &9219030578224032039
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4202982389133070085}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4bcdaf45fcbb37d449736d0e7ecefb6b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  voice: 9
-  outputAudioSource: {fileID: 0}
-  oculusLipsyncAudioSource: {fileID: 9219030578224032034}
-  externalInputField: {fileID: 0}
-  externalTriggerType: 0
 --- !u!114 &9219030578224032036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -187,6 +152,24 @@ MonoBehaviour:
   debugLaughterKey: 104
   showLaughter: 0
   laughterScore: 0
+--- !u!114 &9219030578224032038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4202982389133070085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edc145a494038d8459c22ba26a36b1f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  settings: {fileID: 11400000, guid: 3f813d8bd389cab4db095af6fb7b02b5, type: 2}
+  voice: 17
+  outputAudioSource: {fileID: 0}
+  oculusLipsyncAudioSource: {fileID: 9219030578224032034}
+  externalInputField: {fileID: 0}
+  externalTriggerType: 0
 --- !u!1 &4378290426008837258
 GameObject:
   m_ObjectHideFlags: 0

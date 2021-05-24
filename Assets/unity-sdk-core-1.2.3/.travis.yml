@@ -23,6 +23,7 @@ install:
 - npm install @semantic-release/changelog
 - npm install @semantic-release/git
 - npm install @semantic-release/github
+- rm package-lock.json
 - ./Travis/installUnity.sh
 script:
 - ./Travis/createProject.sh

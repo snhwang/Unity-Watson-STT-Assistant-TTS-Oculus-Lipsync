@@ -1,3 +1,10 @@
+## [1.2.3](https://github.com/IBM/unity-sdk-core/compare/v1.2.2...v1.2.3) (2021-05-12)
+
+
+### Bug Fixes
+
+* remove package-lock.json ([#42](https://github.com/IBM/unity-sdk-core/issues/42)) ([ea1230f](https://github.com/IBM/unity-sdk-core/commit/ea1230fef03532ee012d30115a6f77ed9077fef2))
+
 ## [1.2.2](https://github.com/IBM/unity-sdk-core/compare/v1.2.1...v1.2.2) (2021-02-12)
 
 

@@ -47,30 +47,97 @@ public class TextToSpeech : MonoBehaviour
      * for other languages at:
      * https://cloud.ibm.com/docs/text-to-speech?topic=text-to-speech-voices#voices
      */
-    public enum IBM_voices {
-        GB_KateV3Voice,
-        US_AllisonVoice,
-        US_AllisonV3Voice,
-        US_EmilyV3Voice,
-        US_HenryV3Voice,
-        US_KevinV3Voice,
-        US_LisaVoice,
-        US_LisaV3Voice,
-        US_MichaelVoice,
-        US_MichaelV3Voice,
-        US_OliviaV3Voice
-    }
+    public enum IBM_voices
+    {
+        Arabic_Male_Omar,
+        Portuguese_Brazilian_Female_IsabelaV3,
+        Chinese_Mandarin_Female_LiNa,
+        Chinese_Mandarin_Male_WangWei,
+        Chinese_Mandarin_Female_ZhangJing,
+        Dutch_Female_Emma,
+        Dutch_Male_Liam,
+        English_Austrailian_Male_Craig,
+        English_Austrailian_Female_Madison,
+        English_UK_Female_CharlotteV3,
+        English_UK_Male_JamesV3,
+        English_UK_Female_KateV3,
+        English_US_Female_AllisonV3,
+        English_US_Female_EmilyV3,
+        English_US_Male_HenryV3,
+        English_US_Male_KevinV3,
+        English_US_Female_LisaV3,
+        English_US_Male_MichaelV3,
+        English_US_Female_OliviaV3,
+        French_Male_NicolasV3,
+        French_Female_ReneeV3,
+        French_Canadian_Female_LouiseV3,
+        German_Female_BirgitV3,
+        German_Male_DieterV3,
+        German_Female_ErikaV3,
+        Italian_Female_FrancescaV3,
+        Japanese_Female_EmiV3,
+        Korean_Male_Hyunjun,
+        Korean_Male_SiWoo,
+        Korean_Female_Youngmi,
+        Korean_Female_Yuna,
+        Spanish_Castilian_Male_EnriqueV3,
+        Spanish_Castilian_Female_LauraV3,
+        Spanish_Latin_America_Female_SofiaV3,
+        Spanish_North_American_Female_SofiaV3
+    };
+
+    public Hashtable voiceTable = new Hashtable
+    {
+        {IBM_voices.Arabic_Male_Omar, "ar-MS_OmarVoice"},
+        {IBM_voices.Portuguese_Brazilian_Female_IsabelaV3, "pt-BR_IsabelaV3Voice"},
+        {IBM_voices.Chinese_Mandarin_Female_LiNa, "zh-CN_LiNaVoice"},
+        {IBM_voices.Chinese_Mandarin_Male_WangWei, "zh-CN_WangWeiVoice"},
+        {IBM_voices.Chinese_Mandarin_Female_ZhangJing, "zh-CN_ZhangJingVoice"},
+        {IBM_voices.Dutch_Female_Emma, "nl-NL_EmmaVoice"},
+        {IBM_voices.Dutch_Male_Liam, "nl-NL_LiamVoice"},
+        {IBM_voices.English_Austrailian_Male_Craig, "en-AU_CraigVoice"},
+        {IBM_voices.English_Austrailian_Female_Madison, "en-AU_MadisonVoice"},
+        {IBM_voices.English_UK_Female_CharlotteV3, "en-GB_CharlotteV3Voice"},
+        {IBM_voices.English_UK_Male_JamesV3, "en-GB_JamesV3Voice"},
+        {IBM_voices.English_UK_Female_KateV3, "en-GB_KateV3Voice"},
+        {IBM_voices.English_US_Female_AllisonV3, "en-US_AllisonV3Voice"},
+        {IBM_voices.English_US_Female_EmilyV3, "en-US_EmilyV3Voice"},
+        {IBM_voices.English_US_Male_HenryV3, "en-US_HenryV3Voice"},
+        {IBM_voices.English_US_Male_KevinV3, "en-US_KevinV3Voice"},
+        {IBM_voices.English_US_Female_LisaV3, "en-US_LisaV3Voice"},
+        {IBM_voices.English_US_Male_MichaelV3, "en-US_MichaelV3Voice"},
+        {IBM_voices.English_US_Female_OliviaV3, "en-US_OliviaV3Voice"},
+        {IBM_voices.French_Male_NicolasV3, "fr-FR_NicolasV3Voice"},
+        {IBM_voices.French_Female_ReneeV3, "fr-FR_ReneeV3Voice"},
+        {IBM_voices.French_Canadian_Female_LouiseV3, "fr-FR_LouiseV3Voice"},
+        {IBM_voices.German_Female_BirgitV3, "de-DE_BirgitV3Voice"},
+        {IBM_voices.German_Male_DieterV3, "de-DE_DieterV3Voice"},
+        {IBM_voices.German_Female_ErikaV3, "de-DE_ErikaV3Voice"},
+        {IBM_voices.Italian_Female_FrancescaV3, "it-IT_FrancescaV3Voice"},
+        {IBM_voices.Japanese_Female_EmiV3, "ja-JP_EmiV3Voice"},
+        {IBM_voices.Korean_Male_Hyunjun, "ko-KR_HyunjunVoice"},
+        {IBM_voices.Korean_Male_SiWoo, "ko-KR_SiWooVoice"},
+        {IBM_voices.Korean_Female_Youngmi, "ko-KR_YoungmiVoice"},
+        {IBM_voices.Korean_Female_Yuna, "ko-KR_YunaVoice"},
+        {IBM_voices.Spanish_Castilian_Male_EnriqueV3, "es-ES_EnriqueV3Voice"},
+        {IBM_voices.Spanish_Castilian_Female_LauraV3, "es-ES_LauraV3Voice"},
+        {IBM_voices.Spanish_Latin_America_Female_SofiaV3, "es-LA_SofiaV3Voice"},
+        {IBM_voices.Spanish_North_American_Female_SofiaV3, "es-US_SofiaV3Voice"}
+    };
+
+
+
     [SerializeField]
-    private IBM_voices voice = IBM_voices.US_MichaelV3Voice;
+    private IBM_voices voice = IBM_voices.English_US_Male_MichaelV3;
 
     private TextToSpeechService tts_service; // IBM Watson text to speech service
     private IamAuthenticator tts_authenticator; // IBM Watson text to speech authenticator
 
-//Keep track of when the processing of text to speech is complete.
-//I don't want processing of text to speech to start until the previous 
-//text is processed. Otherwise, short text samples get processed faster
-//than longer samples and may be placed on the queue out of order.
-//It seems that AudioSource.isPlaying doesn't work reliably.
+    //Keep track of when the processing of text to speech is complete.
+    //I don't want processing of text to speech to start until the previous 
+    //text is processed. Otherwise, short text samples get processed faster
+    //than longer samples and may be placed on the queue out of order.
+    //It seems that AudioSource.isPlaying doesn't work reliably.
     public enum ProcessingStatus { Processing, Idle };
     private ProcessingStatus audioStatus;
 
@@ -115,7 +182,7 @@ public class TextToSpeech : MonoBehaviour
         // I originally used enums or flags to keep track if a process such
         // as obtaining a chat response from IBM Assistant was still being processed
         // or was finished processing but this was cumbersome.
-    
+
         if (externalInputField != null)
         {
             if (externalTriggerType == InputFieldTrigger.onEndEdit)
@@ -140,7 +207,7 @@ public class TextToSpeech : MonoBehaviour
         // The new audio clip is placed into the audio queue.
         if (textQueue.Count > 0 && audioStatus == ProcessingStatus.Idle)
         {
-            Debug.Log("Run ProcessText");                
+            Debug.Log("Run ProcessText");
             Runnable.Run(ProcessText());
         }
 
@@ -210,7 +277,7 @@ public class TextToSpeech : MonoBehaviour
                 audioQueue.Enqueue(clip);
             },
             text: nextText,
-            voice: "en-" + voice,
+            voice: (string)voiceTable[voice],
             accept: "audio/wav"
         );
 

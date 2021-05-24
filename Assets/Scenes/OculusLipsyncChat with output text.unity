@@ -210,7 +210,7 @@ PrefabInstance:
     - target: {fileID: 2071180725607596307, guid: 2ad70d9d37396824493243ee34d2ec7e,
         type: 3}
       propertyPath: voice
-      value: 6
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 2071180725607596307, guid: 2ad70d9d37396824493243ee34d2ec7e,
         type: 3}

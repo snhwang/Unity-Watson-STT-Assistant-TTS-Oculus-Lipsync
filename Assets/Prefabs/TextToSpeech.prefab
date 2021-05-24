@@ -48,8 +48,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edc145a494038d8459c22ba26a36b1f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  settings: {fileID: 11400000, guid: 9147c0fb851f1e0488e6e0056eaf83dc, type: 2}
-  voice: 5
+  settings: {fileID: 0}
+  voice: 17
   outputAudioSource: {fileID: 0}
+  oculusLipsyncAudioSource: {fileID: 0}
   externalInputField: {fileID: 0}
   externalTriggerType: 0

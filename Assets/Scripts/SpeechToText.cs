@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Scott Hwang. All Rights Reserved.
+ * Copyright 2021 Scott Hwang. All Rights Reserved.
  * This code was modified slightly from ExampleStreaming.cs 
  * in unity-sdk-4.0.0. This continues to be licensed 
  * under the Apache License, Version 2.0 as noted below.
@@ -46,11 +46,63 @@ public class SpeechToText : MonoBehaviour
      */
     public enum IBM_LanguageModels
     {
-        GB_BroadbandModel,
-        US_BroadbandModel
+        Arabic_Modern_Standard,
+        Chinese_Mandarin,
+        Dutch,
+        English_Australian,
+        English_United_Kingdom,
+        English_United_States,
+        French,
+        French_Canadian,
+        German,
+        Italian,
+        Japanese,
+        Korean,
+        Portuguese_Brazilian,
+        Spanish_Argentinian_Beta,
+        Spanish_Castilian,
+        Spanish_Chilean_Beta,
+        Spanish_Colombian_Beta,
+        Spanish_Mexican_Beta,
+        Spanish_Peruvian_Beta
     }
+
+    public Hashtable languageModels = new Hashtable
+    {
+        { IBM_LanguageModels.Arabic_Modern_Standard, "ar-MS_BroadbandModel" },
+
+        { IBM_LanguageModels.Chinese_Mandarin, "zh-CN_BroadbandModel" },
+
+        { IBM_LanguageModels.Dutch, "nl-NL_BroadbandModel" },
+
+        { IBM_LanguageModels.English_Australian, "en-AU_BroadbandModel" },
+        { IBM_LanguageModels.English_United_Kingdom, "en-GB_BroadbandModel" },
+        { IBM_LanguageModels.English_United_States, "en-US_BroadbandModel" },
+
+        { IBM_LanguageModels.French, "fr-FR_BroadbandModel" },
+        { IBM_LanguageModels.French_Canadian, "fr-CA_BroadbandModel" },
+
+        { IBM_LanguageModels.German, "de-DE_BroadbandModel" },
+
+        { IBM_LanguageModels.Italian, "it-IT_BroadbandModel" },
+
+        { IBM_LanguageModels.Japanese, "ja-JP_BroadbandModel" },
+
+        { IBM_LanguageModels.Korean, "ko-KR_BroadbandModel" },
+
+        { IBM_LanguageModels.Portuguese_Brazilian, "pt-BR_BroadbandModel" },
+
+        { IBM_LanguageModels.Spanish_Argentinian_Beta, "es-AR_BroadbandModel" },
+        { IBM_LanguageModels.Spanish_Castilian, "es-ES_BroadbandModel" },
+        { IBM_LanguageModels.Spanish_Chilean_Beta, "es-CL_BroadbandModel" },
+        { IBM_LanguageModels.Spanish_Colombian_Beta, "es-CO_BroadbandModel" },
+        { IBM_LanguageModels.Spanish_Mexican_Beta, "es-MX_BroadbandModel" },
+        { IBM_LanguageModels.Spanish_Peruvian_Beta, "es-PE_BroadbandModel" },
+    };
+
+
     [SerializeField]
-    private IBM_LanguageModels model = IBM_LanguageModels.US_BroadbandModel;
+    private IBM_LanguageModels model = IBM_LanguageModels.English_United_States;
     private string languageModel;
 
     private int _recordingRoutine = 0;
@@ -85,9 +137,7 @@ public class SpeechToText : MonoBehaviour
         Runnable.Run(CreateService());
         status = ProcessingStatus.Idle;
 
-        // You can't use hyphens in enums, so the name of the model is completely defined here.
-        languageModel = "en-" + model;
-        
+        languageModel = (string)languageModels[model];
 
         outputInputField = gameObject.GetComponent<InputField>();
         if (outputInputField == null)
@@ -96,7 +146,7 @@ public class SpeechToText : MonoBehaviour
             outputInputField.textComponent = gameObject.AddComponent<Text>();
         }
 
-     
+
         if (outputInputField != null)
         {
 

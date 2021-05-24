@@ -776,6 +776,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9219030578224032038, guid: 6d8da464169b17f42b074d443502faa0,
         type: 3}
+      propertyPath: voice
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 9219030578224032038, guid: 6d8da464169b17f42b074d443502faa0,
+        type: 3}
       propertyPath: outputAudioSource
       value: 
       objectReference: {fileID: 7995900736361899256}
