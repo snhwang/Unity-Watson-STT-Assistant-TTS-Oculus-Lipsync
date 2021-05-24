@@ -6,6 +6,14 @@ LinkedIn: https://www.linkedin.com/in/snhwang
 
 Email: snhwang@alum.mit.edu
 
+
+05/23/2021
+Updated to unity-sdk-core-1.2.3
+Updated to Unity 2019.4.26.f1
+
+I also modified TextToSpeech.cs and SpeechToText.cs to update and increase the number of spoken languages to choose from. I included every language that was listed in the Watson API docs. The languages in TextToSpeech which include V3 in their names are higher quality. It seems that IBM removed some of the lower quality voices. That's actually too bad, since they sounded mostly OK and would process faster. You just need to select the Model for the language in Speech To Text (Script) section of the SpeechToText prefabs and the Voice to be used for speaking in the Text To Speech (Script) section of the TextToSpeech prefabs. I have not tested them all.
+
+
 05/16/2021
 Fixed Simplebot.cs so that the Text field targetText is set to the response text from the chat bot. So, in your Unity scene, you can add a Text GameObject to your canvas and set it to targetText in the Inspector so that the text response appears on your canvas. These a new Unity scene in the project "OculusLipsyncChat with output text" which shows an example of this. It is other identical to the other Unity scene "OculusLipsyncChat."
 
